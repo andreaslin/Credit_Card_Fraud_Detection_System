@@ -1,0 +1,250 @@
+=================For Question 2b and 2c================
+Pr( FRAUD | +FP, ~IP, +CRP )
+Query Variables:
+	+FRAUD
+
+Hidden Variables:
+	TRAV
+	OC
+
+Evidence List:
+	+FP
+	~IP
+	+CRP
+
+Restricted given factors:
+	Variables: 	TRAV 
+	+TRAV :	0.05
+	~TRAV :	0.95
+
+	Variables: 	FRAUD 	TRAV 
+	+FRAUD+TRAV :	0.01
+	~FRAUD+TRAV :	0.99
+	+FRAUD~TRAV :	0.004
+	~FRAUD~TRAV :	0.996
+
+	Variables: 	OC 
+	+OC :	0.6
+	~OC :	0.4
+
+	Variables: 	FRAUD 	TRAV 
+	+FRAUD+TRAV :	0.9
+	+FRAUD~TRAV :	0.1
+	~FRAUD+TRAV :	0.9
+	~FRAUD~TRAV :	0.01
+
+	Variables: 	OC 
+	+OC :	0.1
+	~OC :	0.001
+
+	Variables: 	FRAUD 	OC 
+	+FRAUD+OC :	0.98
+	+FRAUD~OC :	0.989
+	~FRAUD+OC :	0.99
+	~FRAUD~OC :	0.999
+
+New Factor: 
+	Variables: 	FRAUD 
+	+FRAUD :	0.00083
+	~FRAUD :	0.054012
+
+New Factor: 
+	Variables: 	FRAUD 
+	+FRAUD :	0.0591956
+	~FRAUD :	0.0597996
+
+New Factors multiply the rest of the factors: 
+Result:
+	Variables: 	FRAUD 
+	+FRAUD :	0.0149838
+	~FRAUD :	0.985016
+
+----------------------------------
+Pr( FRAUD | +FP, ~IP, +CRP, +TRAV )
+Query Variables:
+	+FRAUD
+
+Hidden Variables:
+	OC
+
+Evidence List:
+	+FP
+	~IP
+	+CRP
+	+TRAV
+
+Restricted given factors:
+	Variables: 
+	 :	0.05
+
+	Variables: 	FRAUD 
+	+FRAUD :	0.01
+	~FRAUD :	0.99
+
+	Variables: 	OC 
+	+OC :	0.6
+	~OC :	0.4
+
+	Variables: 	FRAUD 
+	+FRAUD :	0.9
+	~FRAUD :	0.9
+
+	Variables: 	OC 
+	+OC :	0.1
+	~OC :	0.001
+
+	Variables: 	FRAUD 	OC 
+	+FRAUD+OC :	0.98
+	+FRAUD~OC :	0.989
+	~FRAUD+OC :	0.99
+	~FRAUD~OC :	0.999
+
+New Factor: 
+	Variables: 	FRAUD 
+	+FRAUD :	0.0591956
+	~FRAUD :	0.0597996
+
+New Factors multiply the rest of the factors: 
+	Variables: 
+	 :	0.05
+
+	Variables: 	FRAUD 
+	+FRAUD :	0.01
+	~FRAUD :	0.99
+
+	Variables: 	FRAUD 
+	+FRAUD :	0.9
+	~FRAUD :	0.9
+
+Result:
+	Variables: 	FRAUD 
+	+FRAUD :	0.0099
+	~FRAUD :	0.9901
+
+
+=================For Question 3b and 3c=================
+Pr( TRAV | +FP, ~IP, +CRP )
+Query Variables:
+	+TRAV
+
+Hidden Variables:
+	OC
+	FRAUD
+
+Evidence List:
+	+FP
+	~IP
+	+CRP
+
+Restricted given factors:
+	Variables: 	TRAV 
+	+TRAV :	0.05
+	~TRAV :	0.95
+
+	Variables: 	FRAUD 	TRAV 
+	+FRAUD+TRAV :	0.01
+	~FRAUD+TRAV :	0.99
+	+FRAUD~TRAV :	0.004
+	~FRAUD~TRAV :	0.996
+
+	Variables: 	OC 
+	+OC :	0.6
+	~OC :	0.4
+
+	Variables: 	FRAUD 	TRAV 
+	+FRAUD+TRAV :	0.9
+	+FRAUD~TRAV :	0.1
+	~FRAUD+TRAV :	0.9
+	~FRAUD~TRAV :	0.01
+
+	Variables: 	OC 
+	+OC :	0.1
+	~OC :	0.001
+
+	Variables: 	FRAUD 	OC 
+	+FRAUD+OC :	0.98
+	+FRAUD~OC :	0.989
+	~FRAUD+OC :	0.99
+	~FRAUD~OC :	0.999
+
+New Factor: 
+	Variables: 
+	 :	0.118995
+
+New Factor: 
+	Variables: 	TRAV 
+	+TRAV :	1.78992
+	~TRAV :	0.020598
+
+New Factors multiply the rest of the factors: 
+	Variables: 	TRAV 
+	+TRAV :	0.05
+	~TRAV :	0.95
+
+Result:
+	Variables: 	TRAV 
+	+TRAV :	0.820581
+	~TRAV :	0.179419
+
+----------------------------------
+Pr( FRAUD | +FP, ~IP, +CRP, ~TRAV )
+Query Variables:
+	+FRAUD
+
+Hidden Variables:
+	OC
+
+Evidence List:
+	+FP
+	~IP
+	+CRP
+	~TRAV
+
+Restricted given factors:
+	Variables: 
+	 :	0.95
+
+	Variables: 	FRAUD 
+	+FRAUD :	0.004
+	~FRAUD :	0.996
+
+	Variables: 	OC 
+	+OC :	0.6
+	~OC :	0.4
+
+	Variables: 	FRAUD 
+	+FRAUD :	0.1
+	~FRAUD :	0.01
+
+	Variables: 	OC 
+	+OC :	0.1
+	~OC :	0.001
+
+	Variables: 	FRAUD 	OC 
+	+FRAUD+OC :	0.98
+	+FRAUD~OC :	0.989
+	~FRAUD+OC :	0.99
+	~FRAUD~OC :	0.999
+
+New Factor: 
+	Variables: 	FRAUD 
+	+FRAUD :	0.0591956
+	~FRAUD :	0.0597996
+
+New Factors multiply the rest of the factors: 
+	Variables: 
+	 :	0.95
+
+	Variables: 	FRAUD 
+	+FRAUD :	0.004
+	~FRAUD :	0.996
+
+	Variables: 	FRAUD 
+	+FRAUD :	0.1
+	~FRAUD :	0.01
+
+Result:
+	Variables: 	FRAUD 
+	+FRAUD :	0.038235
+	~FRAUD :	0.961765
+
